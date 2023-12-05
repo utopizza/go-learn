@@ -5,6 +5,13 @@ import (
 	"testing"
 )
 
+func TestTwoSums(t *testing.T) {
+	result := twoSum([]int{3, 2, 4}, 6)
+	if len(result) != 2 || result[0] != 1 || result[1] != 2 {
+		t.Errorf("result=%+v", result)
+	}
+}
+
 func TestLengthOfLongestSubstring(t *testing.T) {
 	var tests = []struct {
 		input string
