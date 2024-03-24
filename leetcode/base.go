@@ -1,6 +1,6 @@
 package leetcode
 
-// ListNode Defintion
+// ListNode Definition
 type ListNode struct {
 	Val  int
 	Next *ListNode
