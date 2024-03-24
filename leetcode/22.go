@@ -1,9 +1,6 @@
 package leetcode
 
 func generateParenthesis(n int) []string {
-	if n < 0 {
-		return nil
-	}
 	var results []string
 	backtrack(n, n, "", &results)
 	return results

@@ -2,18 +2,12 @@ package leetcode
 
 func longestPalindrome(s string) string {
 	arr := []rune(s)
-	var currentStr, longestStr string
+	var longestStr string
 	for i := 0; i < len(s); i++ {
 		// even
-		currentStr = expend(arr, i, i+1)
-		if len(currentStr) > len(longestStr) {
-			longestStr = currentStr
-		}
+		longestStr = getLonger(longestStr, expend(arr, i, i+1))
 		// odd
-		currentStr = expend(arr, i-1, i+1)
-		if len(currentStr) > len(longestStr) {
-			longestStr = currentStr
-		}
+		longestStr = getLonger(longestStr, expend(arr, i-1, i+1))
 	}
 	return longestStr
 }
@@ -28,4 +22,11 @@ func expend(arr []rune, left, right int) string {
 		}
 	}
 	return string(arr[left+1 : right])
+}
+
+func getLonger(a, b string) string {
+	if len(a) >= len(b) {
+		return a
+	}
+	return b
 }

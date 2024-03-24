@@ -1,10 +1,7 @@
 package leetcode
 
 func swapPairs(head *ListNode) *ListNode {
-	addedHead := &ListNode{
-		Val:  0,
-		Next: head,
-	}
+	addedHead := &ListNode{0, head}
 	h := addedHead
 	for h != nil && h.Next != nil && h.Next.Next != nil {
 		p, q := h.Next, h.Next.Next

@@ -9,28 +9,21 @@ package leetcode
  */
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	if head == nil || n < 0 {
-		return head
-	}
+	dummy := &ListNode{0, head}
+	slow, fast := dummy, head
 
-	slow, fast := head, head
-	for ; n > 0 && fast.Next != nil; n-- {
+	// 快针先走n步
+	for i := 0; i < n; i++ {
 		fast = fast.Next
 	}
-	if n > 1 {
-		return head
-	}
-	if n == 1 {
-		return head.Next
-	}
 
-	for fast.Next != nil {
-		fast = fast.Next
+	// 两针保持同速度一起走，快针到链尾
+	for ; fast != nil; fast = fast.Next {
 		slow = slow.Next
 	}
-	if slow.Next != nil {
-		slow.Next = slow.Next.Next
-	}
 
-	return head
+	// 慢针的next即为待删节点
+	slow.Next = slow.Next.Next
+
+	return dummy.Next
 }
