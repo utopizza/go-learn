@@ -1,41 +1,38 @@
 package leetcode
 
 func searchRange(nums []int, target int) []int {
-	return []int{findLeft(nums, target), findRight(nums, target)}
-}
+	result := []int{-1, -1}
+	if len(nums) == 0 {
+		return result
+	}
 
-func findLeft(nums []int, target int) int {
-	if nums != nil && len(nums) > 0 {
-		var lo, hi = 0, len(nums) - 1
-		for lo < hi {
-			mid := (lo + hi) / 2
-			if nums[mid] >= target {
-				hi = mid
-			} else {
-				lo = mid + 1
-			}
-		}
-		if nums[hi] == target {
-			return hi
+	var lo, hi int
+
+	// 找最左
+	for lo, hi = 0, len(nums)-1; lo < hi; {
+		mid := (lo + hi) / 2
+		if target <= nums[mid] {
+			hi = mid
+		} else {
+			lo = mid + 1
 		}
 	}
-	return -1
-}
+	if nums[hi] == target {
+		result[0] = hi
+	}
 
-func findRight(nums []int, target int) int {
-	if nums != nil && len(nums) > 0 {
-		var lo, hi = 0, len(nums) - 1
-		for lo < hi {
-			mid := (lo + hi + 1) / 2
-			if nums[mid] <= target {
-				lo = mid
-			} else {
-				hi = mid - 1
-			}
-		}
-		if nums[lo] == target {
-			return lo
+	// 找最右
+	for lo, hi = 0, len(nums)-1; lo < hi; {
+		mid := (lo + hi + 1) / 2
+		if target >= nums[mid] {
+			lo = mid
+		} else {
+			hi = mid - 1
 		}
 	}
-	return -1
+	if nums[lo] == target {
+		result[1] = lo
+	}
+
+	return result
 }

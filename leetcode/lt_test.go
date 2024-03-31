@@ -217,52 +217,6 @@ func TestSearch(t *testing.T) {
 	}
 }
 
-func TestFindLeft(t *testing.T) {
-	tests := []struct {
-		input1 []int
-		input2 int
-		want   int
-	}{
-		{[]int{1}, 1, 0},
-		{[]int{1, 2}, 1, 0},
-		{[]int{2, 2, 3}, 2, 0},
-		{[]int{1, 2, 2, 3}, 2, 1},
-		{[]int{1, 2, 2, 3}, 3, 3},
-		{[]int{1, 2, 2, 3}, 4, -1},
-		{[]int{1, 2, 2, 3}, 0, -1},
-	}
-	for _, test := range tests {
-		output := findLeft(test.input1, test.input2)
-		if output != test.want {
-			t.Errorf("input:%+v, output:%d, want:%d",
-				test.input1, output, test.want)
-		}
-	}
-}
-
-func TestFindRight(t *testing.T) {
-	tests := []struct {
-		input1 []int
-		input2 int
-		want   int
-	}{
-		{[]int{1}, 1, 0},
-		{[]int{1, 2}, 1, 0},
-		{[]int{2, 2, 3}, 2, 1},
-		{[]int{1, 2, 2, 3}, 2, 2},
-		{[]int{1, 2, 2, 2}, 2, 3},
-		{[]int{1, 2, 2, 3}, 4, -1},
-		{[]int{1, 2, 2, 3}, 0, -1},
-	}
-	for _, test := range tests {
-		output := findRight(test.input1, test.input2)
-		if output != test.want {
-			t.Errorf("input:%+v, output:%d, want:%d",
-				test.input1, output, test.want)
-		}
-	}
-}
-
 func TestSearchRange(t *testing.T) {
 	tests := []struct {
 		input1 []int
@@ -303,4 +257,10 @@ func TestIsValidSudoku(t *testing.T) {
 	if !isValidSudoku(board) {
 		t.Error()
 	}
+}
+
+func TestCombinationSum(t *testing.T) {
+	candidates := []int{2, 3, 6, 7}
+	target := 7
+	combinationSum(candidates, target)
 }
