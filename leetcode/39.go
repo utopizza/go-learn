@@ -18,9 +18,10 @@ func combinationSumRecursive(candidates []int, target int, index int, sum int, a
 		return
 	} else {
 		for i := index; i < len(candidates); i++ {
-			arr = append(arr, candidates[i])
-			combinationSumRecursive(candidates, target, i, sum+candidates[i], arr, result)
-			arr = arr[:len(arr)-1]
+			if i > index && candidates[i-1] == candidates[i] {
+				continue
+			}
+			combinationSumRecursive(candidates, target, i+1, sum+candidates[i], append(arr, candidates[i]), result)
 		}
 	}
 }

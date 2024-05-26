@@ -264,3 +264,24 @@ func TestCombinationSum(t *testing.T) {
 	target := 7
 	combinationSum(candidates, target)
 }
+
+func TestTrap(t *testing.T) {
+	height := []int{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}
+	trap(height)
+}
+
+func TestJump(t *testing.T) {
+	jump([]int{2, 3, 1, 1, 4})
+}
+
+func TestPermuteUnique(t *testing.T) {
+	permuteUnique([]int{1, 1, 2})
+}
+
+func TestRotate(t *testing.T) {
+	rotate([][]int{
+		{1, 2, 3},
+		{4, 5, 6},
+		{7, 8, 9},
+	})
+}
