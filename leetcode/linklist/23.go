@@ -1,4 +1,4 @@
-package leetcode
+package linklist
 
 func mergeKLists(lists []*ListNode) *ListNode {
 	var head *ListNode

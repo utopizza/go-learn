@@ -1,4 +1,4 @@
-package leetcode
+package linklist
 
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	temp := &ListNode{0, nil}
