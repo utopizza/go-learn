@@ -1,12 +1,4 @@
-package leetcode
-
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
+package linklist
 
 func addTwoNumbers(l1, l2 *ListNode) *ListNode {
 	p, q := l1, l2

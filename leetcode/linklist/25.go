@@ -1,4 +1,4 @@
-package leetcode
+package linklist
 
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	preHead := &ListNode{0, head}

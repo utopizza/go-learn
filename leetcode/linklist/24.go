@@ -1,4 +1,4 @@
-package leetcode
+package linklist
 
 func swapPairs(head *ListNode) *ListNode {
 	addedHead := &ListNode{0, head}

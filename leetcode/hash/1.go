@@ -1,4 +1,4 @@
-package leetcode
+package hash
 
 func twoSum(nums []int, target int) []int {
 	m1 := make(map[int]bool)
