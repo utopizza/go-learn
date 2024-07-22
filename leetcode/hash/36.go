@@ -1,4 +1,4 @@
-package leetcode
+package hash
 
 func isValidSudoku(board [][]byte) bool {
 	if len(board) != 9 || len(board[0]) != 9 {
