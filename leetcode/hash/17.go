@@ -1,4 +1,4 @@
-package leetcode
+package hash
 
 func letterCombinations(digits string) []string {
 	keyBoard := map[rune][]rune{
