@@ -1,4 +1,4 @@
-package hash
+package dp
 
 func wordBreak(s string, wordDict []string) bool {
 	wordSet := make(map[string]bool)
