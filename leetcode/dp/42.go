@@ -1,11 +1,15 @@
-package leetcode
+package dp
+
+import (
+	"github.com/utopizza/go-learn/leetcode/utils"
+)
 
 func trap(height []int) int {
 	sum := 0
 	leftMax := leftHighest(height)
 	rightMax := rightHighest(height)
 	for i := 0; i < len(height); i++ {
-		water := min(leftMax[i], rightMax[i]) - height[i]
+		water := utils.Min(leftMax[i], rightMax[i]) - height[i] // 核心公式
 		if water > 0 {
 			sum += water
 		}

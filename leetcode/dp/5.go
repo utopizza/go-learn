@@ -1,4 +1,4 @@
-package leetcode
+package dp
 
 func longestPalindrome(s string) string {
 	arr := []rune(s)

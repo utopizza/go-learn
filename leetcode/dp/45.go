@@ -1,6 +1,9 @@
-package leetcode
+package dp
 
-import "math"
+import (
+	"github.com/utopizza/go-learn/leetcode/utils"
+	"math"
+)
 
 func jump(nums []int) int {
 	// 动态规划
@@ -11,7 +14,7 @@ func jump(nums []int) int {
 	for i := 1; i < len(dp); i++ {
 		for j := 0; j < i; j++ {
 			if j+nums[j] >= i {
-				dp[i] = min(dp[i], dp[j]+1)
+				dp[i] = utils.Min(dp[i], dp[j]+1)
 			}
 		}
 	}
@@ -24,7 +27,7 @@ func jumpGreedy(nums []int) int {
 	step := 0
 	farthest := 0
 	for i := 0; i < len(nums)-1; i++ {
-		farthest = max(farthest, i+nums[i])
+		farthest = utils.Max(farthest, i+nums[i])
 		if i == end {
 			end = farthest
 			step++
