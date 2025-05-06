@@ -1,4 +1,4 @@
-package array
+package dp
 
 func maxSubArray(nums []int) int {
 	n := len(nums)

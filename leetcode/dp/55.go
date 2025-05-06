@@ -1,4 +1,4 @@
-package array
+package dp
 
 func canJump(nums []int) bool {
 	far := nums[0]
