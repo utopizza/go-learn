@@ -1,7 +1,7 @@
-package array
+package dp
 
-func generate(numRows int) [][]int {
-	ret := make([][]int, numRows)
+func getRow(rowIndex int) []int {
+	ret := make([][]int, rowIndex)
 	ret[0] = []int{1}
 	for i := 1; i < len(ret); i++ {
 		ret[i] = make([]int, i+1)
@@ -10,5 +10,5 @@ func generate(numRows int) [][]int {
 			ret[i][j] = ret[i-1][j-1] + ret[i-1][j]
 		}
 	}
-	return ret
+	return ret[rowIndex-1]
 }

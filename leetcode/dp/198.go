@@ -1,4 +1,4 @@
-package array
+package dp
 
 func rob(nums []int) int {
 	if len(nums) < 2 {

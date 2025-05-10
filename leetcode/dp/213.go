@@ -1,4 +1,4 @@
-package array
+package dp
 
 func robV2(nums []int) int {
 	n := len(nums)
