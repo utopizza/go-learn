@@ -1,4 +1,4 @@
-package array
+package dp
 
 func maxProduct(nums []int) int {
 	n := len(nums)

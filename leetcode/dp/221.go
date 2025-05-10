@@ -1,4 +1,4 @@
-package array
+package dp
 
 func maximalSquare(matrix [][]byte) int {
 	n := len(matrix)
